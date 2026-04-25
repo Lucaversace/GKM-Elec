@@ -8,30 +8,30 @@ export function TrustedBy() {
     { name: 'ACTION', logo: '/logos-clients/action.svg.png' },
   ];
 
-  const duplicatedClients = [...clients, ...clients, ...clients];
+  const duplicatedClients = [...clients, ...clients, ...clients, ...clients, ...clients];
 
   return (
-    <section className="py-16 bg-white border-y border-brand-dark-light/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-brand-dark text-center mb-12">
+    <section className="py-16 bg-white border-y border-brand-dark-light/30 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-brand-dark text-center">
           Ils nous ont fait confiance
         </h2>
+      </div>
 
-        <div className="relative overflow-hidden">
-          <div className="flex animate-scroll gap-16">
-            {duplicatedClients.map((client, index) => (
-              <div
-                key={`${client.name}-${index}`}
-                className="flex-shrink-0 flex items-center justify-center min-w-[180px] h-24 px-8"
-              >
-                <img 
-                  src={client.logo} 
-                  alt={client.name}
-                  className="max-h-12 w-auto transition-all duration-300 hover:scale-110"
-                />
-              </div>
-            ))}
-          </div>
+      <div className="relative flex overflow-hidden">
+        <div className="flex animate-scroll gap-8 md:gap-20 w-max items-center py-4">
+          {duplicatedClients.map((client, index) => (
+            <div
+              key={`${client.name}-${index}`}
+              className="flex-shrink-0 flex items-center justify-center px-4"
+            >
+              <img 
+                src={client.logo} 
+                alt={client.name}
+                className="h-8 md:h-12 w-auto object-contain transition-all duration-300 hover:scale-110"
+              />
+            </div>
+          ))}
         </div>
       </div>
 
@@ -41,12 +41,18 @@ export function TrustedBy() {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-33.333%);
+            transform: translateX(-20%);
           }
         }
 
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 25s linear infinite;
+        }
+
+        @media (max-width: 768px) {
+          .animate-scroll {
+            animation: scroll 15s linear infinite;
+          }
         }
 
         .animate-scroll:hover {
