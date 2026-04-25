@@ -9,7 +9,7 @@ import { ServiceArea } from './components/ServiceArea';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Realizations } from './components/Realizations';
-import { Zap, Home, Building2, Users, Briefcase } from 'lucide-react';
+import { Zap, Home, Building2, Users, Briefcase, Network } from 'lucide-react';
 
 // ============================================
 // CONFIGURATION - Personnalisez ces valeurs
@@ -40,6 +40,11 @@ const SERVICES_PARTICULIERS = [
     icon: <Building2 className="w-6 h-6" />,
     title: 'Rénovation électrique',
     description: 'Remise aux normes complète de votre installation électrique. Diagnostic gratuit et conseil personnalisé.',
+  },
+  {
+    icon: <Network className="w-6 h-6" />,
+    title: 'Réseau fibre optique',
+    description: 'Dépannage de fibre optique à domicile. Installation de prises, optimisation du signal et configuration de votre réseau domestique.',
   },
 ];
 
@@ -131,58 +136,82 @@ const SURROUNDING_CITIES = [
 // Réalisations particuliers
 const REALIZATIONS_PARTICULIERS = [
   {
-    image: 'https://images.unsplash.com/photo-1759830337357-29c472b6746c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpY2FsJTIwcGFuZWwlMjBpbnN0YWxsYXRpb258ZW58MXx8fHwxNzc2MzYzNTg2fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Tableau électrique neuf',
-    description: 'Installation complète d\'un tableau électrique aux normes pour une maison à Saint-Étienne',
+    imageBefore: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=1000&auto=format&fit=crop',
+    imageAfter: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=1000&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1558444458-2f16ca003889?q=80&w=1000&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=1000&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=1000&auto=format&fit=crop',
+    ],
+    title: 'Rénovation Tableau Électrique',
+    description: 'Mise aux normes complète d\'un tableau électrique vétuste dans une maison des années 70.',
+    problematic: 'Risque d\'incendie dû à des fusibles obsolètes et absence de protection différentielle sur plusieurs circuits.',
+    tasks: [
+      'Dépose de l\'ancien tableau en bois',
+      'Installation d\'un coffret 3 rangées Schneider Electric',
+      'Pose de 3 interrupteurs différentiels 30mA',
+      'Repérage et étiquetage complet de l\'installation',
+      'Test de continuité et de terre'
+    ]
   },
   {
-    image: 'https://images.unsplash.com/photo-1767514536570-83d70c024247?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob21lJTIwZWxlY3RyaWNhbCUyMHdpcmluZ3xlbnwxfHx8fDE3NzY0MTA0MTV8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Rénovation électrique maison',
-    description: 'Mise aux normes et câblage complet d\'une habitation à Lyon',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1635335874521-7987db781153?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpY2FsJTIwc3dpdGNoJTIwc29ja2V0fGVufDF8fHx8MTc3NjQxMDQxNnww&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Prises et interrupteurs',
-    description: 'Pose de prises et interrupteurs design dans appartement rénové',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1772992552302-825bb23ffb1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsaWdodGluZyUyMGluc3RhbGxhdGlvbiUyMG1vZGVybnxlbnwxfHx8fDE3NzY0MTA0MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Éclairage LED moderne',
-    description: 'Installation d\'un système d\'éclairage LED économique et design pour votre maison',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpY2lhbiUyMHdvcmtpbmclMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzc2NDEwNDE1fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Dépannage et réparation',
-    description: 'Intervention rapide pour dépannage électrique d\'urgence 7j/7',
+    imageBefore: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1000&auto=format&fit=crop',
+    imageAfter: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=1000&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=1000&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1565814636199-ae8133055c1c?q=80&w=1000&auto=format&fit=crop',
+    ],
+    title: 'Installation Éclairage LED Connecté',
+    description: 'Transformation lumineuse d\'un salon avec intégration de systèmes intelligents.',
+    problematic: 'Éclairage unique central blafard et manque de flexibilité dans les ambiances lumineuses.',
+    tasks: [
+      'Création de saignées pour nouveaux points lumineux',
+      'Installation de spots LED encastrés dimmables',
+      'Mise en place d\'un contrôleur intelligent compatible smartphone',
+      'Installation de rubans LED en corniche pour éclairage indirect',
+      'Optimisation de la consommation énergétique'
+    ]
   },
 ];
 
 // Réalisations professionnels
 const REALIZATIONS_PROFESSIONNELS = [
   {
-    image: 'https://images.unsplash.com/photo-1774494168068-0f716c3aafcf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBlbGVjdHJpY2FsJTIwaW5zdGFsbGF0aW9ufGVufDF8fHx8MTc3NjQxMDQxNnww&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Installation bureau professionnel',
-    description: 'Équipement électrique complet pour bureaux d\'entreprise à Villeurbanne',
+    imageBefore: 'https://images.unsplash.com/photo-1558444458-5cd05bcbd26f?q=80&w=1000&auto=format&fit=crop',
+    imageAfter: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=1000&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1558444458-5cd05bcbd26f?q=80&w=1000&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop',
+    ],
+    title: 'Baie Informatique & Réseau Entreprise',
+    description: 'Réorganisation complète du local technique et déploiement de la fibre optique.',
+    problematic: 'Nœud de câbles inextricable causant des pannes réseau fréquentes et difficulté de maintenance.',
+    tasks: [
+      'Audit du réseau existant et identification des câbles',
+      'Installation d\'une baie de brassage 42U ventilée',
+      'Câblage structuré Cat 6A pour 50 postes de travail',
+      'Migration vers un switch manageable 48 ports PoE',
+      'Certification des liens réseau aux normes ISO/IEC'
+    ]
   },
   {
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBidWlsZGluZ3xlbnwxfHx8fDE3NzY0MTA0MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Centre commercial E.Leclerc',
-    description: 'Maintenance et modernisation des installations électriques',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGJ1aWxkaW5nfGVufDF8fHx8MTc3NjQxMDQxNnww&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Immeuble de bureaux SPIE',
-    description: 'Installation électrique et réseau pour nouveaux locaux professionnels',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1772992552302-825bb23ffb1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsaWdodGluZyUyMGluc3RhbGxhdGlvbiUyMG1vZGVybnxlbnwxfHx8fDE3NzY0MTA0MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Éclairage commercial',
-    description: 'Système d\'éclairage professionnel pour magasin ALDI',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpY2lhbiUyMHdvcmtpbmclMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzc2NDEwNDE1fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Infrastructure SNCF',
-    description: 'Maintenance préventive des installations électriques en gare',
+    imageBefore: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1000&auto=format&fit=crop',
+    imageAfter: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1000&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1000&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1000&auto=format&fit=crop',
+    ],
+    title: 'Électricité Industrielle ALDI',
+    description: 'Maintenance et upgrade des systèmes de puissance en entrepôt logistique.',
+    problematic: 'Coupures de courant intempestives sur les lignes de convoyage bridant la productivité.',
+    tasks: [
+      'Analyse harmonique du réseau électrique',
+      'Remplacement des disjoncteurs moteurs défaillants',
+      'Installation d\'une batterie de condensateurs pour compensation',
+      'Mise en place d\'une surveillance thermique par caméra IR',
+      'Rapport de conformité Q18'
+    ]
   },
 ];
 
@@ -205,39 +234,11 @@ function App() {
         profession={CONFIG.profession}
         phone={CONFIG.phone}
         companyName={CONFIG.companyName}
+        clientType={clientType}
+        setClientType={setClientType}
       />
 
-      {/* Navigation Particuliers / Professionnels */}
-      <div className="sticky top-16 z-40 bg-white border-b shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center gap-2 py-3">
-            <button
-              onClick={() => setClientType('particuliers')}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-lg transition-all ${
-                isParticuliers
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              <Users className="w-5 h-5" />
-              <span>Particuliers</span>
-            </button>
-            <button
-              onClick={() => setClientType('professionnels')}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-lg transition-all ${
-                !isParticuliers
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              <Briefcase className="w-5 h-5" />
-              <span>Professionnels</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <main className="pt-16">
+      <main className="pt-28 md:pt-32">
         <Hero
           profession={CONFIG.profession}
           city={CONFIG.city}

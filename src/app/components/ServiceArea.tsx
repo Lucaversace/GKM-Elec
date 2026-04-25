@@ -7,20 +7,20 @@ interface ServiceAreaProps {
 
 export function ServiceArea({ mainCity, surroundingCities }: ServiceAreaProps) {
   return (
-    <section className="py-16 md:py-20 bg-gray-50">
+    <section className="py-16 md:py-20 bg-brand-dark-light">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
             Zone d'intervention
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-brand-dark-muted max-w-2xl mx-auto">
             Nous intervenons à {mainCity} et dans toutes les villes environnantes pour vous garantir une intervention rapide.
           </p>
         </div>
 
         <div className="bg-white rounded-lg shadow-md p-8 max-w-4xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
-            <MapPin className="w-8 h-8 text-blue-600" />
+            <MapPin className="w-8 h-8 text-brand-blue" />
             <h3 className="text-2xl font-bold">{mainCity} et alentours</h3>
           </div>
           
@@ -28,15 +28,15 @@ export function ServiceArea({ mainCity, surroundingCities }: ServiceAreaProps) {
             {surroundingCities.map((city, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 text-gray-700"
+                className="flex items-center gap-2 text-brand-dark-muted"
               >
-                <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                <div className="w-2 h-2 bg-brand-blue rounded-full"></div>
                 <span>{city}</span>
               </div>
             ))}
           </div>
           
-          <p className="mt-6 text-sm text-gray-500 text-center">
+          <p className="mt-6 text-sm text-brand-dark-muted/70 text-center">
             Votre ville n'est pas dans la liste ? Contactez-nous, nous pouvons intervenir dans un rayon plus large.
           </p>
         </div>

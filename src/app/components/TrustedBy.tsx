@@ -1,20 +1,19 @@
 export function TrustedBy() {
   const clients = [
-    { name: 'SPIE', logo: 'SPIE' },
-    { name: 'SNCF', logo: 'SNCF' },
-    { name: 'E.LECLERC', logo: 'E.LECLERC' },
-    { name: 'ALDI', logo: 'ALDI' },
-    { name: 'EDF', logo: 'EDF' },
-    { name: 'ROIRET', logo: 'ROIRET' },
-    { name: 'ACTION', logo: 'ACTION' },
+    { name: 'SPIE', logo: '/logos-clients/spie.png' },
+    { name: 'E.LECLERC', logo: '/logos-clients/leclerc.png' },
+    { name: 'ALDI', logo: '/logos-clients/aldi.svg.png' },
+    { name: 'EDF', logo: '/logos-clients/edf.svg.png' },
+    { name: 'ROIRET', logo: '/logos-clients/roiret.webp' },
+    { name: 'ACTION', logo: '/logos-clients/action.svg.png' },
   ];
 
   const duplicatedClients = [...clients, ...clients, ...clients];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-white border-y border-brand-dark-light/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-gray-600 mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-brand-dark text-center mb-12">
           Ils nous ont fait confiance
         </h2>
 
@@ -25,9 +24,11 @@ export function TrustedBy() {
                 key={`${client.name}-${index}`}
                 className="flex-shrink-0 flex items-center justify-center min-w-[180px] h-24 px-8"
               >
-                <div className="text-2xl font-bold text-gray-400 whitespace-nowrap">
-                  {client.logo}
-                </div>
+                <img 
+                  src={client.logo} 
+                  alt={client.name}
+                  className="max-h-12 w-auto transition-all duration-300 hover:scale-110"
+                />
               </div>
             ))}
           </div>

@@ -18,52 +18,30 @@ export function Testimonials({ testimonials, averageRating }: TestimonialsProps)
     <section className="py-16 md:py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ils nous font confiance
-          </h2>
-          <div className="flex items-center justify-center gap-2 mb-2">
+          <div className="flex justify-center mb-4">
             {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className={`w-6 h-6 ${
-                  i < Math.floor(averageRating)
-                    ? 'fill-yellow-400 text-yellow-400'
-                    : 'text-gray-300'
-                }`}
-              />
+              <Star key={i} className="w-6 h-6 text-brand-blue fill-current" />
             ))}
-            <span className="font-bold text-xl ml-2">{averageRating}/5</span>
           </div>
-          <p className="text-gray-600">
-            Basé sur {testimonials.length} avis clients vérifiés
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Ce que disent nos clients</h2>
+          <div className="text-xl font-semibold text-brand-dark">Note moyenne : {averageRating}/5</div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 p-6 rounded-lg shadow-md relative"
-            >
-              <Quote className="w-8 h-8 text-blue-200 mb-4" />
-              <div className="flex gap-1 mb-3">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-4 h-4 ${
-                      i < testimonial.rating
-                        ? 'fill-yellow-400 text-yellow-400'
-                        : 'text-gray-300'
-                    }`}
-                  />
+            <div key={index} className="bg-brand-dark-light p-8 rounded-2xl relative">
+              <Quote className="absolute top-4 right-4 w-8 h-8 text-brand-blue/20" />
+              <div className="flex mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-brand-blue fill-current" />
                 ))}
               </div>
-              <p className="text-gray-700 mb-4 italic leading-relaxed">
+              <p className="text-brand-dark-muted mb-4 italic leading-relaxed">
                 "{testimonial.text}"
               </p>
-              <div className="border-t pt-4">
+              <div className="border-t border-brand-dark-light/50 pt-4">
                 <div className="font-semibold">{testimonial.name}</div>
-                <div className="text-sm text-gray-500">
+                <div className="text-sm text-brand-dark-muted/70">
                   {testimonial.city} • {testimonial.date}
                 </div>
               </div>
