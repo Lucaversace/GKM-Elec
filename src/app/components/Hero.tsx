@@ -24,12 +24,12 @@ export function Hero({ profession, city, tagline, phone, heroImage }: HeroProps)
         />
       </div>
       
-      <div className="relative max-w-6xl mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight font-montserrat">
+      <div className="relative max-w-6xl mx-auto px-6 py-16 md:py-24 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-montserrat">
             {profession} à {city}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-brand-blue-light">
+          <p className="text-lg md:text-2xl mb-10 text-brand-blue-light max-w-2xl mx-auto">
             {tagline}
           </p>
           
@@ -42,7 +42,7 @@ export function Hero({ profession, city, tagline, phone, heroImage }: HeroProps)
           </button>
 
           {/* Trust badges */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-left">
             <div className="flex items-start gap-3 bg-white/10 backdrop-blur-sm p-4 rounded-lg">
               <Clock className="w-6 h-6 flex-shrink-0 text-brand-blue-muted" />
               <div>

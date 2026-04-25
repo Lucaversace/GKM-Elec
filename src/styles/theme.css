@@ -72,6 +72,9 @@
   /* Typography */
   --font-sans: Arial, sans-serif;
   --font-montserrat: 'Montserrat', sans-serif;
+
+  /* Breakpoints */
+  --breakpoint-xs: 400px;
 }
 
 @layer base {

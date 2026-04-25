@@ -13,7 +13,7 @@ export function Contact({ phone, email, profession, city }: ContactProps) {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-white">
+    <section id="contact" className="py-16 md:py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">

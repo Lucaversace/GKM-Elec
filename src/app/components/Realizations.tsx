@@ -280,9 +280,12 @@ export function Realizations({ realizations }: RealizationsProps) {
                   </div>
                 )}
 
-                <button className="w-full sm:w-auto px-8 py-3 bg-brand-dark hover:bg-brand-gray text-white font-bold rounded-lg transition-colors shadow-lg shadow-brand-dark/10">
+                <a 
+                  href="#contact"
+                  className="inline-block w-full sm:w-auto px-8 py-3 bg-brand-dark hover:bg-brand-gray text-white text-center font-bold rounded-lg transition-colors shadow-lg shadow-brand-dark/10"
+                >
                   Besoin d'un projet similaire ?
-                </button>
+                </a>
               </div>
             </div>
           ))}
