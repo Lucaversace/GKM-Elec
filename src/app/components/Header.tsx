@@ -1,5 +1,6 @@
 import { Phone, Users, Briefcase } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router';
 import logo from '../../assets/logo_gkmelec.png';
 
 interface HeaderProps {
@@ -37,13 +38,13 @@ export function Header({ profession, phone, companyName, clientType, setClientTy
       {/* Top Bar */}
       <div className={`${isScrolled ? 'py-1.5 md:py-2' : 'py-2 md:py-3'} border-b border-brand-dark-light transition-all duration-300`}>
         <div className="max-w-6xl mx-auto px-4 flex items-center justify-between gap-4">
-          <div className="flex-shrink-0 flex items-center">
+          <Link to="/" className="flex-shrink-0 flex items-center">
             <img 
               src={logo} 
               alt={companyName || profession} 
               className={`${isScrolled ? 'h-7 md:h-10' : 'h-8 md:h-11'} w-auto object-contain transition-all`}
             />
-          </div>
+          </Link>
           
           <button
             onClick={handleCall}

@@ -1,4 +1,5 @@
 import { Phone, Mail, Clock, MapPin, Linkedin, Facebook } from 'lucide-react';
+import { Link } from 'react-router';
 import logo from '../../assets/logo_gkmelec.png';
 
 interface FooterProps {
@@ -103,11 +104,13 @@ export function Footer({ profession, city, phone, email }: FooterProps) {
         
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-brand-dark-muted">
-          <p>© {currentYear} {profession} - GKM Elec. Tous droits réservés.</p>
+          <div className="flex flex-col items-center md:items-start gap-1">
+            <p>© {currentYear} {profession} - GKM Elec. Tous droits réservés.</p>
+            <p>Réalisé par <a href="https://lumenweb.fr" target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:underline">lumenweb.fr</a></p>
+          </div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Mentions Légales</a>
-            <a href="#" className="hover:text-white transition-colors">Politique de Confidentialité</a>
-            <a href="#" className="hover:text-white transition-colors">CGV</a>
+            <Link to="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link>
+            <Link to="/politique-confidentialite" className="hover:text-white transition-colors">Politique de Confidentialité</Link>
           </div>
         </div>
       </div>
